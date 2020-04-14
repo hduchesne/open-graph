@@ -1,2 +1,14 @@
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<ogmix = 'http://modules.se.jahia.org/open-graph/mix/1.0'>
+<ognt = 'http://modules.se.jahia.org/open-graph/nt/1.0'>
+<og = 'http://modules.se.jahia.org/open-graph/1.0'>
+
+[ogmix:openGraph] mixin
+ extends=jnt:content,jnt:page
+ itemtype=metadata
+ - og:title (string) internationalized nofulltext
+ - og:description (string, textarea) internationalized nofulltext
+ - og:type (string,choicelist[resourceBundle]) = 'website' autocreated nofulltext < 'article', 'book', 'profile', 'website'
+// faire une vue open-graph pour l'image
+ - og:image (weakreference, picker[type='image']) internationalized < 'jmix:image'
