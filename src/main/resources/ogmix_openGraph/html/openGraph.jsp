@@ -20,13 +20,13 @@
 
 <c:set var="language" value="${currentResource.locale.language}"/>
 <c:set var="site" value="${renderContext.site.title}"/>
-<c:set var="_path_" value="${currentNode.path}"/>
 <c:set var="host" value="${url.server}"/>
+<c:url var="url" value="${currentNode.url}" context="/"/>
 
 <meta property="og:title" content="${currentNode.properties['og:title'].string}" />
 <meta property="og:description" content="${currentNode.properties['og:description'].string}" />
 <meta property="og:type" content="${currentNode.properties['og:type'].string}" />
 <meta property="og:locale" content="${language}" />
 <meta property="og:site_name" content="${site}" />
-<meta property="og:url" content="${host}/${_path_}" />
+<meta property="og:url" content="${host}${url}" />
 <template:include view="hidden.image"/>

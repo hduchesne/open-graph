@@ -23,10 +23,11 @@
     <c:set var="alt" value="${imageNode.properties['j:nodename'].string}"/>
     <c:set var="width" value="${imageNode.properties['j:width'].string}"/>
     <c:set var="height" value="${imageNode.properties['j:height'].string}"/>
+    <c:set var="host" value="${url.server}"/>
     <c:url var="url" value="${imageNode.url}" context="/"/>
 
 
-    <meta property="og:image" content="${url}" />
+    <meta property="og:image" content="${host}${url}" />
     <meta property="og:image:width" content="${width}" />
     <meta property="og:image:height" content="${height}" />
     <meta property="og:image:alt" content="${alt}" />
